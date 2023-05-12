@@ -1,0 +1,69 @@
+@mixin center-column-direction {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin center-row-direction {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$total-width : 60%;
+$inner-div-width : 90%;
+
+@mixin width-margin {
+  width : $total-width;
+  margin-left: ((100%)-$total-width)*0.5;
+}
+
+@mixin inner-div-width {
+  width : $inner-div-width;
+  margin-left : ((100%)-$inner-div-width)*0.5;
+}
+
+header {
+  @include center-column-direction;
+  @include width-margin;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+article {
+  @include center-column-direction;
+  @include width-margin;
+  border : 1px solid black;
+  width : $total-width;
+  padding : 10px;
+}
+
+#prompt {
+  width : 98.5%;
+  height : 5.0vh;
+  margin-left: 0%;
+  margin-bottom: 1.0vh;
+}
+
+#number {
+  &-input-div {
+    @include inner-div-width;
+  }
+
+  &-pad-div {
+    @include inner-div-width;
+    @include center-column-direction;
+
+    .number-pad-row {
+      width : 100%;
+      @include center-row-direction;
+
+      button {
+        width : 25%;
+        background-color: white;
+        height : 5.0vh;
+      }
+    }
+  }
+}

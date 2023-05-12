@@ -1,0 +1,55 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20%;
+  border: 1px solid black;
+  width: 60%;
+  padding: 10px;
+}
+
+#prompt {
+  width: 98.5%;
+  height: 5vh;
+  margin-left: 0%;
+  margin-bottom: 1vh;
+}
+
+#number-input-div {
+  width: 90%;
+  margin-left: 5%;
+}
+#number-pad-div {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#number-pad-div .number-pad-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#number-pad-div .number-pad-row button {
+  width: 25%;
+  background-color: white;
+  height: 5vh;
+}
+
+/*# sourceMappingURL=style.css.map */
