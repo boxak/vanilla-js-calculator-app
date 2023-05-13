@@ -66,4 +66,11 @@ article {
       }
     }
   }
+
+  &-display-div {
+    @include center-row-direction;
+    @include inner-div-width;
+    height : 5.0vh;
+    border : 1px solid black;
+  }
 }
