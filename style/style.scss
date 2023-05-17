@@ -1,76 +1,80 @@
-@mixin center-column-direction {
-  display:flex;
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$border-color: #000;
+$font-family: Arial, sans-serif;
+
+@mixin center {
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-@mixin center-row-direction {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-
-$total-width : 60%;
-$inner-div-width : 90%;
-
-@mixin width-margin {
-  width : $total-width;
-  margin-left: ((100%)-$total-width)*0.5;
-}
-
-@mixin inner-div-width {
-  width : $inner-div-width;
-  margin-left : ((100%)-$inner-div-width)*0.5;
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  @include center-column-direction;
-  @include width-margin;
-  font-size: 30px;
-  font-weight: bold;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
 }
 
 article {
-  @include center-column-direction;
-  @include width-margin;
-  border : 1px solid black;
-  width : $total-width;
-  padding : 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid $border-color;
 }
 
-#prompt {
-  width : 98.5%;
-  height : 5.0vh;
-  margin-left: 0%;
-  margin-bottom: 1.0vh;
+#number-display-div {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: right;
 }
 
-#number {
-  &-input-div {
-    @include inner-div-width;
-  }
+#number-display-div p {
+  margin: 0;
+  font-size: 24px;
+}
 
-  &-pad-div {
-    @include inner-div-width;
-    @include center-column-direction;
+#number-input-div {
+  @include center; /* Apply the 'center' mixin */
+  margin-bottom: 20px;
+}
 
-    .number-pad-row {
-      width : 100%;
-      @include center-row-direction;
+#number-input-div input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 4px;
+  border: 1px solid $secondary-color;
+}
 
-      button {
-        width : 25%;
-        background-color: white;
-        height : 5.0vh;
-      }
-    }
-  }
+.number-pad-row {
+  display: flex;
+}
 
-  &-display-div {
-    @include center-row-direction;
-    @include inner-div-width;
-    height : 5.0vh;
-    border : 1px solid black;
-  }
+.number-pad-row button {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+  background-color: #fff;
+  border: 1px solid $secondary-color;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.number-pad-row button:hover {
+  background-color: $secondary-color;
+  color: #fff;
+}
+
+.number-pad-row button:active {
+  background-color: darken($secondary-color, 10%);
 }

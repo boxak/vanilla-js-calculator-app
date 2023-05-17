@@ -45,6 +45,8 @@ window.onload = function() {
       allReset();
     } else if (string === '1/x') {
       getReciprocal();
+    } else if (string === '%') {
+      calculatePercentage();
     }
   }
 
@@ -177,5 +179,20 @@ window.onload = function() {
     inputDom.value = 'not divisible by zero';
     // eslint-disable-next-line no-throw-literal
     throw 'not divisible by zero';
+  }
+
+  function calculatePercentage() {
+    const string = inputDom.value;
+    const number = parseFloat(string);
+  
+    if (isNaN(number)) {
+      return;
+    }
+  
+    const percentage = number / 100;
+    const result = prevNumber * percentage;
+  
+    inputDom.value = result;
+    saveDom.innerText = prevNumber + '*' + number + '%';
   }
 };
